@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+
+      <meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0d1728">
+<title>动物总动员·3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient-glow top"></div>
+<div class="ambient-glow bottom"></div>
+
+<div class="auth-gate" id="authGate">
+  <div class="auth-card">
+    <div class="auth-logo"><img src="assets/logo.png" alt="问鼎国际娱乐"></div>
+    <div class="auth-title" id="authTitle">注册问鼎国际娱乐</div>
+    <div class="auth-subtitle">首次进入请注册账号；只需填写账号和密码</div>
+    <div class="auth-tabs"><button id="authTabRegister" class="auth-tab active" type="button">注册</button><button id="authTabLogin" class="auth-tab" type="button">登录</button></div>
+    <div class="auth-form">
+      <input id="authAccount" class="auth-input" type="text" maxlength="32" placeholder="请输入账号" autocomplete="username" inputmode="text">
+      <input id="authPassword" class="auth-input" type="password" maxlength="128" placeholder="请输入密码（至少6位）" autocomplete="new-password">
+      <button id="authSubmit" class="auth-submit" type="button">注册并进入</button>
+      <div id="authMsg" class="auth-msg"></div>
+      <div class="auth-privacy">注册/登录时会记录 IP、设备与登录时间，用于账号安全和后台管理。</div>
+    </div>
+  </div>
+</div>
+<div class="app" id="app">
+<!-- ============ 发现页 ============ -->
+<section class="view active" id="view-discover">
+<div class="hero-brand">
+<div class="hero-top">
+<div class="hero-logo"><img src="assets/logo.png" alt="问鼎国际娱乐"></div>
+<div class="hero-text">
+<div class="hero-title">问鼎国际娱乐</div>
+<div class="hero-sub">每天都有新惊喜 · 问鼎国际娱乐3D</div>
+<div class="hero-badges">
+<span class="hero-badge">● 在线</span>
+<span class="hero-badge gold">🏆 官方认证</span>
+</div>
+</div>
+</div>
+<div class="hero-stats">
+
+      <div class="hero-stat"><div class="hs-label">当前期号</div><div class="hs-val"
+      id="heroRound">#0000</div></div>
+    
+
+      <div class="hero-stat"><div class="hs-label">倒计时</div><div class="hs-val green"
+      id="heroTimer">--</div></div>
+    
+
+      <div class="hero-stat"><div class="hs-label">在线人数</div><div class="hs-val blue"
+      id="heroOnline">1,286</div></div>
+    
+</div>
+</div>
+<div class="banner-wrap" id="bannerWrap">
+<div class="banner-track" id="bannerTrack"></div>
+<div class="banner-dots" id="bannerDots"></div>
+</div>
+<div class="notice-bar">
+<div class="notice-icon">📢</div>
+
+      <div class="notice-track"><div class="notice-text" id="noticeText">正在加载...</div></div>
+    
+</div>
+<div class="quick-grid" id="quickGrid"></div>
+<div class="section-title"><h3>热门活动</h3></div>
+<div class="activity-grid" id="discoverActivityGrid"></div>
+</section>
+
+<!-- ============ 游戏大厅 ============ -->
+<section class="view" id="view-games">
+
+      <div class="page-title"><h2>游戏大厅</h2><span class="badge">5
+      款游戏</span></div>
+    
+<div class="search-bar">
+<span class="s-icon">🔍</span>
+<input type="text" class="s-input" id="searchInput" placeholder="搜索游戏名称..." autocomplete="off">
+</div>
+<div class="category-tabs" id="categoryTabs"></div>
+<div class="game-list" id="gameList">
+<div class="game-card" data-game="lucky" data-name="问鼎国际娱乐3D" data-cat="self">
+<button class="fav-btn" data-fav="lucky" type="button">☆</button>
+<div class="game-icon-box lucky"><span class="emoji">🦄</span></div>
+<div class="game-meta">
+<div class="game-name">问鼎国际娱乐3D</div>
+<div class="game-desc">36 动物竞猜 · 60秒一局 · 33 倍赔率</div>
+</div>
+<div class="game-badge live">进入</div>
+</div>
+<div class="game-card" data-game="wheel" data-name="幸运大转盘" data-cat="self">
+<button class="fav-btn" data-fav="wheel" type="button">☆</button>
+<div class="game-icon-box wheel"><span class="emoji">🎡</span></div>
+<div class="game-meta">
+<div class="game-name">幸运大转盘</div>
+<div class="game-desc">转动圆盘 · 赢取丰厚奖励</div>
+</div>
+<div class="game-badge soon">敬请期待</div>
+</div>
+<div class="game-card" data-game="zodiac" data-name="十二生肖" data-cat="self">
+<button class="fav-btn" data-fav="zodiac" type="button">☆</button>
+<div class="game-icon-box zodiac"><span class="emoji">🐲</span></div>
+<div class="game-meta">
+<div class="game-name">十二生肖</div>
+<div class="game-desc">经典生肖玩法 · 即将上线</div>
+</div>
+<div class="game-badge soon">敬请期待</div>
+</div>
+<div class="game-card coming" data-game="pg" data-name="PG 电子" data-cat="slot">
+<button class="fav-btn" data-fav="pg" type="button">☆</button>
+<div class="game-icon-box pg"><span class="emoji">🎰</span></div>
+<div class="game-meta">
+<div class="game-name">PG 电子</div>
+<div class="game-desc">经典电子游艺 · 震撼来袭</div>
+</div>
+<div class="game-badge soon">敬请期待</div>
+</div>
+</div>
+</section>
+
+<!-- ============ 我的 ============ -->
+<section class="view" id="view-mine">
+<div id="frozenBannerWrap"></div>
+<div class="profile-card">
+
+      <div class="avatar" id="avatarEl">🦄<div class="vip-badge" id="vipBadge">VIP 0</div><div
+      class="edit-hint">✎</div></div>
+    
+<div class="profile-info">
+
+      <div class="profile-name" id="profileNameEl">玩家8888 <span
+      class="edit-icon">✎</span></div>
+    
+<div class="profile-id">ID: 10008888</div>
+<div class="profile-verify pending" id="verifyBadge">未实名</div>
+</div>
+</div>
+<div class="balance-row">
+<div class="balance-card">
+<div class="balance-label">账户余额</div>
+<div class="balance-amount" id="mineBalance"><span class="unit">¥</span>0.00</div>
+</div>
+
+      <button class="mini-btn" id="btnMyBets" type="button"><div class="mb-icon">📋</div><div
+      class="mb-label">投注记录</div></button>
+    
+
+      <button class="mini-btn" id="btnAccountLog" type="button"><div class="mb-icon">💰</div><div
+      class="mb-label">账户明细</div></button>
+    
+</div>
+<div class="section-title"><h3>账户操作</h3></div>
+<div class="action-grid">
+
+      <button class="action-card deposit" id="btnDeposit" type="button"><div
+      class="a-icon">💰</div><div class="a-label">充值</div></button>
+    
+
+      <button class="action-card withdraw" id="btnWithdraw" type="button"><div
+      class="a-icon">💸</div><div class="a-label">提现</div></button>
+    
+
+      <button class="action-card service" id="btnService" type="button"><div
+      class="a-icon">💬</div><div class="a-label">客服</div></button>
+    
+
+      <button class="action-card vip" id="btnVip" type="button"><div class="a-icon">👑</div><div
+      class="a-label">VIP特权</div></button>
+    
+</div>
+<div class="section-title"><h3>常用功能</h3></div>
+<div class="menu-list" id="menuList"></div>
+</section>
+
+<!-- ============ 游戏内页 ============ -->
+<section class="view" id="view-playing">
+<div class="playing-bar">
+<button class="back-btn" id="btnBack" type="button">‹</button>
+<div class="playing-title">问鼎国际娱乐3D</div>
+<div class="playing-live">LIVE</div>
+</div>
+<div class="tool-bar" id="toolBar"></div>
+<div class="play-tabs" id="playTabs"></div>
+<div class="top-stats">
+<div class="stat-box">
+<div class="stat-label">当前期号</div>
+<div class="stat-value gold" id="roundNo" style="font-size:12px;">20261001-A3K9</div>
+</div>
+<div class="stat-box timer-box">
+<div class="stat-label" id="timerLabel">开奖倒计时</div>
+<div class="stat-value timer-value" id="timer">--</div>
+<div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+</div>
+<div class="stat-box">
+<div class="stat-label">上期开奖</div>
+<div class="stat-value" id="lastResult" style="font-size:16px;">--</div>
+</div>
+</div>
+<div class="board-grid mode-animal" id="boardGrid"></div>
+<div class="bottom-panel">
+<div class="info-row">
+<div class="info-item">余 <span class="val gold" id="coins">0</span></div>
+<div class="info-item">押 <span class="val white" id="betTotal">0</span></div>
+<div class="info-item">奖 <span class="val green" id="expectWin">0</span></div>
+
+      <input type="number" class="manual-input" id="manualInput" placeholder="自填" min="1" max="5000"
+      inputmode="numeric" autocomplete="off">
+    
+</div>
+<div class="chip-grid" id="chipGrid">
+<button class="chip" data-v="1" type="button">1</button>
+<button class="chip" data-v="10" type="button">10</button>
+<button class="chip" data-v="20" type="button">20</button>
+<button class="chip" data-v="50" type="button">50</button>
+<button class="chip" data-v="100" type="button">100</button>
+<button class="chip" data-v="500" type="button">500</button>
+</div>
+</div>
+</section>
+
+<!-- ============ 客服页 ============ -->
+<section class="view" id="view-service">
+<div class="playing-bar">
+<button class="back-btn" id="btnServiceBack" type="button">‹</button>
+<div class="playing-title">在线客服</div>
+<div class="playing-live">7×24</div>
+</div>
+<div class="maintain-tip">
+<div class="mt-icon">💬</div>
+<div class="mt-title">客服系统对接中</div>
+<div class="mt-desc">正在接入在线客服系统<br>请稍后重试</div>
+</div>
+<div class="help-section">
+<h4>📞 联系方式</h4>
+
+      <div class="kv"><span class="k">Telegram</span><span
+      class="v">@animal_support</span></div>
+    
+
+      <div class="kv"><span class="k">邮箱</span><span
+      class="v">support@example.com</span></div>
+    
+
+      <div class="kv"><span class="k">工作时间</span><span class="v">7×24
+      小时</span></div>
+    
+</div>
+</section>
+</div>
+
+<nav class="tabbar">
+
+      <button class="tab-btn active" data-tab="discover" type="button"><span
+      class="tab-icon">🧭</span><span>发现</span></button>
+    
+
+      <button class="tab-btn" data-tab="games" type="button"><span
+      class="tab-icon">🎮</span><span>游戏</span></button>
+    
+
+      <button class="tab-btn" data-tab="mine" type="button"><span
+      class="tab-icon">👤</span><span>我的</span></button>
+    
+</nav>
+
+<div class="win-overlay" id="winOverlay">
+<div class="win-content">
+<div class="heart-burst">💖 🎉 🎊 💖</div>
+<h2>恭喜中奖！</h2>
+<p id="winAmount">+0</p>
+<div class="win-detail" id="winDetail"></div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title" id="modalTitle">标题</div>
+<button class="modal-close" id="modalClose" type="button">✕</button>
+</div>
+<div class="modal-body" id="modalBody"></div>
+</div>
+</div>
+
+<div class="announce-overlay" id="announceOverlay">
+<div class="announce-content">
+
+      <div class="announce-header"><div class="ah-icon">📢</div><div
+      class="ah-title">平台公告</div></div>
+    
+<div class="announce-body" id="announceBody"></div>
+<button class="announce-btn" id="announceBtn" type="button">我已知晓</button>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="auth.js"></script>
+<script src="app1.js"></script>
+<script src="app2.js"></script>
+<script src="app3.js"></script>
+</body>
+</html>
